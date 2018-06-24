@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/mi_primer_ruta', function() {
+  return 'hola choro';
+});
+
+Route::resource('App','DetailController');
