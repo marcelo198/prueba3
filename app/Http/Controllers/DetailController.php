@@ -13,7 +13,7 @@ class DetailController extends Controller
      */
     public function index()
     {
-        //
+        return 'hola desde el controler';
     }
 
     /**
@@ -23,7 +23,7 @@ class DetailController extends Controller
      */
     public function create()
     {
-       return view('create');
+       return view('detail.create');
     }
 
     /**
@@ -34,7 +34,13 @@ class DetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $detail = new Detail();
+        $detail->genero = $request->input("genero");
+        $detail->situacion_sentimental= $request->input("situacion_sentimental");
+        $detail->fecha_nacimiento=  $request->input("fecha_nacimiento");
+
+        $detail->Save();
+        return response()->json($detail,200);
     }
 
     /**

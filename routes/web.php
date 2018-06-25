@@ -11,12 +11,20 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mi_primer_ruta', function() {
-  return 'hola choro';
-});
+//Route::get('/name/{name}',function($name){
+//  return 'hola soy'.$name;
+//});
 
-Route::resource('App','DetailController');
+
+//Route::get('/mi_primer_ruta', function() {
+//  return 'hola choro como tay';
+//});
+
+Route::get('create','DetailController@create');
+
+Route::resource('detail', 'DetailController');
